@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false" bootstrap="tests/bootstrap.php" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage processUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">src</directory>
-    </include>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd" bootstrap="tests/bootstrap.php" colors="true" cacheDirectory=".phpunit.cache" failOnRisky="true" failOnWarning="true">
+  <testsuites>
+    <testsuite name="Tarsana Command Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <coverage>
     <report>
       <clover outputFile="build/logs/clover.xml"/>
     </report>
   </coverage>
-  <logging/>
-  <testsuites>
-    <testsuite name="Tarsana Command Test Suite">
-      <directory>./tests/</directory>
-    </testsuite>
-    <testsuite name="Tarsana Command Examples Test Suite">
-      <directory>./examples/tests/</directory>
-    </testsuite>
-  </testsuites>
+  <source>
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+  </source>
 </phpunit>
